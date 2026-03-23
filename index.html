@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Purple Forge Capital — We Buy Houses Massachusetts</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --white:      #ffffff;
+  --off:        #F8F7F5;
+  --cream:      #F1EFE8;
+  --cream2:     #E8E6DC;
+  --ink:        #1C1B18;
+  --ink2:       #3D3C38;
+  --muted:      #6B6A64;
+  --light-txt:  #9B9A94;
+  --navy:       #1E2B3A;
+  --navy2:      #263547;
+  --navy3:      #2E3F54;
+  --gold:       #9A7B3F;
+  --gold2:      #B8953F;
+  --gold-lt:    #D4AE6A;
+  --gold-pale:  #F5EDD9;
+  --rule:       rgba(28,27,24,0.10);
+  --rule2:      rgba(28,27,24,0.16);
+  --rule-gold:  rgba(154,123,63,0.30);
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.8rem;height:72px;
+  background:var(--white);
+  border-bottom:1px solid var(--rule2);
+}
+.logo-wrap{display:flex;align-items:center;gap:0.85rem;text-decoration:none;}
+.logo-hex{width:46px;height:46px;flex-shrink:0;}
+.logo-text{line-height:1.2;}
+.logo-mark{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:0.08em;color:var(--ink);}
+.logo-mark span{color:var(--gold);}
+.logo-sub{font-size:0.55rem;letter-spacing:0.26em;text-transform:uppercase;color:var(--muted);font-weight:400;}
+.nav-links{display:flex;align-items:center;gap:2rem;}
+.nav-links a{font-size:0.8rem;color:var(--muted);text-decoration:none;letter-spacing:0.06em;text-transform:uppercase;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-cta{
+  background:var(--navy);color:var(--white);
+  padding:0.6rem 1.5rem;font-size:0.78rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  border:none;cursor:pointer;border-radius:2px;
+  font-family:'Barlow Condensed',sans-serif;transition:background 0.2s;
+}
+.nav-cta:hover{background:var(--navy2);}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:stretch;
+  padding-top:72px;
+}
+.hero-left{
+  background:var(--off);
+  padding:4rem 3.5rem 4rem 3rem;
+  display:flex;flex-direction:column;justify-content:center;
+  border-right:1px solid var(--rule2);
+  position:relative;
+}
+.hero-left::after{
+  content:'';position:absolute;top:4rem;left:3rem;
+  width:40px;height:3px;background:var(--gold);
+}
+.hero-right-panel{
+  background:var(--navy);
+  display:flex;flex-direction:column;justify-content:center;
+  padding:3.5rem 3rem;position:relative;
+}
+.hero-right-panel::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:var(--gold);
+}
+.tag{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.68rem;font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:2rem;margin-top:1.5rem;
+}
+.tag::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+h1{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:clamp(3.2rem,5.5vw,5.2rem);
+  line-height:0.95;letter-spacing:0.02em;
+  color:var(--ink);margin-bottom:1.5rem;
+}
+h1 span{color:var(--gold);}
+.hero-desc{font-size:1rem;line-height:1.85;color:var(--muted);max-width:420px;margin-bottom:2.5rem;font-weight:300;}
+.offer-pills{display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.pill{background:var(--white);border:1px solid var(--rule2);color:var(--ink2);padding:0.35rem 0.85rem;font-size:0.75rem;font-weight:500;letter-spacing:0.04em;border-radius:2px;}
+.hero-stats{display:flex;gap:2.5rem;padding-top:2rem;border-top:1px solid var(--rule2);flex-wrap:wrap;}
+.hero-stats .stat-n{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:var(--navy);line-height:1;}
+.hero-stats .stat-l{font-size:0.65rem;text-transform:uppercase;letter-spacing:0.14em;color:var(--light-txt);margin-top:4px;}
+
+/* RIGHT PANEL */
+.panel-headline{font-family:'Barlow Condensed',sans-serif;font-size:1.35rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--white);margin-bottom:0.35rem;line-height:1.2;}
+.panel-sub{font-size:0.8rem;color:rgba(255,255,255,0.5);margin-bottom:1.75rem;font-weight:300;letter-spacing:0.02em;}
+.panel-cta-btn{background:var(--gold);color:var(--white);padding:0.95rem;font-size:0.9rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;font-family:'Barlow Condensed',sans-serif;transition:background 0.2s;width:100%;margin-bottom:1.75rem;}
+.panel-cta-btn:hover{background:var(--gold2);}
+.panel-features{display:flex;flex-direction:column;gap:0.85rem;}
+.panel-feature{display:flex;align-items:flex-start;gap:0.75rem;font-size:0.85rem;color:rgba(255,255,255,0.65);line-height:1.5;font-weight:300;}
+.panel-feature-dot{width:5px;height:5px;border-radius:50%;background:var(--gold-lt);flex-shrink:0;margin-top:0.4rem;}
+.panel-divider{height:1px;background:rgba(255,255,255,0.08);margin:1.5rem 0;}
+.panel-contact{display:flex;flex-direction:column;gap:0.6rem;}
+.panel-contact a{color:rgba(255,255,255,0.6);font-size:0.82rem;text-decoration:none;font-weight:300;transition:color 0.2s;display:flex;align-items:center;gap:0.5rem;}
+.panel-contact a:hover{color:var(--white);}
+.panel-contact a span{color:var(--gold-lt);}
+
+/* FLOATING CTA */
+.floating-cta{position:fixed;bottom:2rem;right:2rem;z-index:300;background:var(--navy);color:var(--white);padding:0.85rem 1.6rem;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;font-family:'Barlow Condensed',sans-serif;box-shadow:0 4px 20px rgba(30,43,58,0.25);transition:background 0.2s,transform 0.2s;border-left:3px solid var(--gold);}
+.floating-cta:hover{background:var(--navy2);transform:translateY(-2px);}
+
+/* POPUP */
+.popup-overlay{display:none;position:fixed;inset:0;z-index:500;background:rgba(28,27,24,0.55);align-items:center;justify-content:center;padding:1.5rem;backdrop-filter:blur(4px);}
+.popup-overlay.active{display:flex;}
+.popup-box{background:var(--white);border:1px solid var(--rule2);border-top:3px solid var(--gold);width:100%;max-width:540px;padding:2.5rem;position:relative;max-height:90vh;overflow-y:auto;border-radius:3px;box-shadow:0 24px 64px rgba(28,27,24,0.18);}
+.popup-close{position:absolute;top:1.1rem;right:1.1rem;background:transparent;border:1px solid var(--rule2);color:var(--muted);font-size:1rem;cursor:pointer;line-height:1;transition:all 0.2s;padding:0.3rem 0.5rem;border-radius:2px;}
+.popup-close:hover{color:var(--ink);}
+.form-headline{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin-bottom:0.35rem;line-height:1.1;}
+.form-sub{font-size:0.8rem;color:var(--muted);margin-bottom:1.75rem;font-weight:300;}
+.lead-form{display:flex;flex-direction:column;gap:0.9rem;}
+.fgroup{display:flex;flex-direction:column;gap:0.35rem;}
+.fgroup label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--muted);font-weight:600;}
+.fgroup input,.fgroup select{background:var(--off);border:1px solid var(--rule2);color:var(--ink);padding:0.7rem 0.9rem;font-size:0.88rem;font-family:'Barlow',sans-serif;outline:none;transition:border-color 0.2s,background 0.2s;border-radius:2px;width:100%;}
+.fgroup input:focus,.fgroup select:focus{border-color:var(--gold);background:var(--white);}
+.fgroup select option{background:var(--white);color:var(--ink);}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
+.submit-btn{background:var(--navy);color:var(--white);padding:0.95rem;font-size:0.9rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;font-family:'Barlow Condensed',sans-serif;transition:background 0.2s,opacity 0.2s;margin-top:0.3rem;width:100%;}
+.submit-btn:hover{background:var(--navy2);}
+.submit-btn:disabled{opacity:0.5;cursor:not-allowed;}
+.form-trust{display:flex;align-items:center;gap:0.5rem;font-size:0.7rem;color:var(--light-txt);margin-top:0.5rem;}
+.form-trust::before{content:'🔒';font-size:0.7rem;}
+.contact-quick{display:flex;flex-wrap:wrap;gap:1.25rem;margin-top:0.75rem;}
+.cq-item{color:var(--navy);font-size:0.8rem;text-decoration:none;font-weight:500;transition:color 0.2s;letter-spacing:0.02em;}
+.cq-item:hover{color:var(--gold);}
+.form-msg{display:none;padding:0.85rem 1rem;border-radius:2px;font-size:0.85rem;font-weight:500;text-align:center;margin-top:0.5rem;letter-spacing:0.02em;}
+.form-msg.success{display:block;background:#f0faf5;border:1px solid #a7d7ba;color:#1a5c38;}
+.form-msg.error{display:block;background:#fdf2f2;border:1px solid #e4a5a5;color:#7a1f1f;}
+
+/* SECTIONS */
+.section-tag{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.65rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:0.85rem;}
+.section-tag::before{content:'';display:block;width:20px;height:1px;background:var(--gold);}
+h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,3.5vw,2.8rem);letter-spacing:0.04em;line-height:1.05;margin-bottom:0.5rem;color:var(--ink);}
+.section-sub{font-size:0.95rem;font-weight:300;color:var(--muted);line-height:1.7;max-width:540px;margin-top:0.5rem;}
+
+/* PROCESS */
+.process{background:var(--white);padding:6rem 3rem;border-top:1px solid var(--rule);}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:3.5rem;border-top:2px solid var(--ink);}
+.process-step{padding:2.5rem 2rem 2rem 0;border-right:1px solid var(--rule);}
+.process-step:last-child{border-right:none;padding-right:0;}
+.step-num{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;color:var(--cream2);line-height:1;margin-bottom:1rem;}
+.step-title{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);margin-bottom:0.75rem;}
+.step-desc{font-size:0.83rem;line-height:1.8;color:var(--muted);font-weight:300;}
+
+/* ABOUT */
+.about{background:var(--off);padding:6rem 3rem;border-top:1px solid var(--rule);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:3.5rem;}
+.about-text p{font-size:0.95rem;line-height:1.9;color:var(--muted);font-weight:300;margin-bottom:1.2rem;}
+.about-highlight{border-left:2px solid var(--gold);padding-left:1.25rem;font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;color:var(--ink);line-height:1.55;margin:2rem 0;font-weight:600;letter-spacing:0.02em;}
+.about-cards{display:flex;flex-direction:column;gap:1rem;}
+.about-card{background:var(--white);border:1px solid var(--rule);border-left:2px solid var(--gold);padding:1.5rem 1.5rem 1.5rem 1.25rem;}
+.about-card h4{font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);margin-bottom:0.5rem;}
+.about-card p{font-size:0.82rem;color:var(--muted);line-height:1.7;font-weight:300;}
+
+/* SITUATIONS */
+.situations{background:var(--white);padding:6rem 3rem;border-top:1px solid var(--rule);}
+.sit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:3.5rem;background:var(--rule);}
+.sit-card{background:var(--white);padding:2rem 1.75rem;transition:background 0.2s;}
+.sit-card:hover{background:var(--off);}
+.sit-marker{width:28px;height:2px;background:var(--gold);margin-bottom:1.25rem;transition:width 0.3s;}
+.sit-card:hover .sit-marker{width:44px;}
+.sit-title{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);margin-bottom:0.6rem;}
+.sit-desc{font-size:0.82rem;line-height:1.75;color:var(--muted);font-weight:300;}
+
+/* WHY SELL */
+.why{background:var(--off);padding:6rem 3rem;border-top:1px solid var(--rule);}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.why-list{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;border-top:1px solid var(--rule);}
+.why-item{display:flex;align-items:flex-start;gap:1.25rem;padding:1.25rem 0;border-bottom:1px solid var(--rule);}
+.why-num{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;color:var(--gold);line-height:1;flex-shrink:0;min-width:1.5rem;margin-top:2px;}
+.why-item h4{font-family:'Barlow Condensed',sans-serif;font-size:0.95rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--ink);margin-bottom:0.4rem;}
+.why-item p{font-size:0.82rem;color:var(--muted);line-height:1.7;font-weight:300;}
+.vs-card{background:var(--white);border:1px solid var(--rule2);border-top:2px solid var(--navy);padding:2rem;}
+.vs-title{font-family:'Barlow Condensed',sans-serif;font-size:0.85rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--navy);margin-bottom:1.5rem;padding-bottom:1rem;border-bottom:1px solid var(--rule);}
+.vs-table{width:100%;border-collapse:collapse;}
+.vs-table th{font-family:'Barlow Condensed',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--light-txt);padding:0.5rem 0.75rem;text-align:left;border-bottom:1px solid var(--rule);}
+.vs-table th:nth-child(2){text-align:center;}
+.vs-table th:last-child{text-align:right;}
+.vs-table td{padding:0.8rem 0.75rem;font-size:0.83rem;border-bottom:1px solid var(--rule);vertical-align:middle;}
+.vs-table tr:last-child td{border-bottom:none;}
+.vs-table td:first-child{color:var(--muted);font-weight:300;}
+.vs-table td:nth-child(2){color:var(--navy);font-weight:600;text-align:center;}
+.vs-table td:last-child{color:var(--cream2);text-decoration:line-through;font-size:0.77rem;text-align:right;}
+
+/* FAQ */
+.faq{background:var(--white);padding:6rem 3rem;border-top:1px solid var(--rule);}
+.faq-list{margin-top:3rem;}
+.faq-item{border-bottom:1px solid var(--rule);}
+.faq-item:first-child{border-top:1px solid var(--rule);}
+.faq-question{width:100%;background:transparent;border:none;display:flex;justify-content:space-between;align-items:center;padding:1.35rem 0;cursor:pointer;text-align:left;font-family:'Barlow Condensed',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink);transition:color 0.2s;}
+.faq-question:hover{color:var(--gold);}
+.faq-icon{font-size:1.2rem;color:var(--gold);font-weight:300;transition:transform 0.3s;flex-shrink:0;margin-left:1rem;}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s ease;}
+.faq-answer.open{max-height:300px;padding-bottom:1.5rem;}
+.faq-answer p{font-size:0.9rem;line-height:1.85;color:var(--muted);font-weight:300;}
+.faq-question.active{color:var(--gold);}
+.faq-question.active .faq-icon{transform:rotate(45deg);}
+
+/* BOTTOM CTA */
+.bottom-cta{background:var(--navy);padding:4rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-top:2px solid var(--gold);}
+.bcta-text h2{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;letter-spacing:0.04em;color:var(--white);line-height:1.05;}
+.bcta-text p{color:rgba(255,255,255,0.45);font-size:0.9rem;font-weight:300;margin-top:0.4rem;}
+.bcta-btn{background:var(--gold);color:var(--white);padding:1rem 2.5rem;font-size:0.9rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;font-family:'Barlow Condensed',sans-serif;white-space:nowrap;transition:background 0.2s;}
+.bcta-btn:hover{background:var(--gold2);}
+
+/* FOOTER */
+footer{background:var(--ink);padding:3rem;display:flex;align-items:flex-start;justify-content:space-between;gap:3rem;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-brand{display:flex;align-items:flex-start;gap:1rem;}
+.footer-logo-name{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;color:var(--white);letter-spacing:0.08em;}
+.footer-logo-name span{color:var(--gold-lt);}
+.footer-copy{font-size:0.72rem;color:rgba(255,255,255,0.2);margin-top:0.25rem;}
+.footer-address{font-size:0.75rem;color:rgba(255,255,255,0.35);margin-top:0.3rem;line-height:1.7;}
+.footer-links{display:flex;flex-direction:column;gap:0.45rem;margin-top:0.6rem;}
+.footer-links a{color:rgba(255,255,255,0.45);font-size:0.78rem;text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold-lt);}
+.footer-disclaimer{font-size:0.65rem;color:rgba(255,255,255,0.18);max-width:460px;line-height:1.7;margin-top:0.75rem;}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .hero{grid-template-columns:1fr;}
+  .hero-right-panel{padding:2.5rem;}
+  .hero-right-panel::before{top:0;left:0;right:0;bottom:auto;width:auto;height:3px;}
+  .hero-left{padding:3.5rem 2rem 2.5rem;}
+  .about-grid,.why-grid{grid-template-columns:1fr;}
+  .bottom-cta{flex-direction:column;text-align:center;}
+  nav{padding:0 1.5rem;}
+  .nav-links{display:none;}
+  .process,.why,.faq,.about,.situations,.bottom-cta{padding:4rem 1.5rem;}
+  footer{flex-direction:column;padding:2.5rem 1.5rem;}
+  .floating-cta{bottom:1rem;right:1rem;}
+  .frow{grid-template-columns:1fr;}
+  .sit-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:540px){
+  .process-grid{grid-template-columns:1fr;}
+  .sit-grid{grid-template-columns:1fr;}
+  .hero-stats{gap:1.5rem;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-wrap">
+    <svg class="logo-hex" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="40,5 71,22.5 71,57.5 40,75 9,57.5 9,22.5" fill="#F1EFE8"/>
+      <polygon points="40,5 71,22.5 71,57.5 40,75 9,57.5 9,22.5" fill="none" stroke="#9A7B3F" stroke-width="2.5"/>
+      <polygon points="40,14 63,27 63,53 40,66 17,53 17,27" fill="none" stroke="#1E2B3A" stroke-width="1" opacity="0.25"/>
+      <text font-family="Georgia,serif" font-size="17" font-weight="700" fill="#1E2B3A" x="40" y="41" text-anchor="middle" dominant-baseline="central" letter-spacing="1">PFC</text>
+    </svg>
+    <div class="logo-text">
+      <div class="logo-mark">Purple Forge <span>Capital</span></div>
+      <div class="logo-sub">Massachusetts Real Estate</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#situations">We Buy</a>
+    <a href="#why">Why Us</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <button class="nav-cta" onclick="openPopup()">Get My Cash Offer</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-left">
+    <div class="tag">Cash Home Buyers — Massachusetts</div>
+    <h1>We Buy<br/><span>Houses</span><br/>Fast &amp; Fair</h1>
+    <p class="hero-desc">Selling your home should not be stressful. We make all-cash offers across Massachusetts — no repairs, no agents, no fees. Close on your timeline.</p>
+    <div class="offer-pills">
+      <span class="pill">&#10003;&nbsp; No Repairs Needed</span>
+      <span class="pill">&#10003;&nbsp; No Agent Fees</span>
+      <span class="pill">&#10003;&nbsp; Any Condition</span>
+      <span class="pill">&#10003;&nbsp; Close in Days</span>
+    </div>
+    <div class="hero-stats">
+      <div><div class="stat-n">100+</div><div class="stat-l">Homes Purchased</div></div>
+      <div><div class="stat-n">$0</div><div class="stat-l">Fees or Commissions</div></div>
+      <div><div class="stat-n">10+</div><div class="stat-l">Years Experience</div></div>
+    </div>
+  </div>
+
+  <div class="hero-right-panel">
+    <div class="panel-headline">Get Your Free<br/>Cash Offer Today</div>
+    <div class="panel-sub">No obligation &nbsp;&middot;&nbsp; Within 24 hours &nbsp;&middot;&nbsp; 100% confidential</div>
+    <button class="panel-cta-btn" onclick="openPopup()">Request My Free Cash Offer &rarr;</button>
+    <div class="panel-features">
+      <div class="panel-feature"><div class="panel-feature-dot"></div><span>We buy in any condition — no repairs needed</span></div>
+      <div class="panel-feature"><div class="panel-feature-dot"></div><span>Zero agent commissions or closing costs</span></div>
+      <div class="panel-feature"><div class="panel-feature-dot"></div><span>Close on your schedule — fast or flexible</span></div>
+      <div class="panel-feature"><div class="panel-feature-dot"></div><span>Local Massachusetts investors you can trust</span></div>
+      <div class="panel-feature"><div class="panel-feature-dot"></div><span>Fair, transparent offer — no lowball tactics</span></div>
+    </div>
+    <div class="panel-divider"></div>
+    <div class="panel-contact">
+      <a href="tel:5083776864"><span>&#9742;</span> (508) 377-6864</a>
+      <a href="mailto:purpleforgecapital@gmail.com"><span>&#9993;</span> purpleforgecapital@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLOATING BUTTON -->
+<button class="floating-cta" onclick="openPopup()">Get Cash Offer</button>
+
+<!-- POPUP FORM -->
+<div class="popup-overlay" id="popupOverlay" onclick="closeOnOverlay(event)">
+  <div class="popup-box">
+    <button class="popup-close" onclick="closePopup()">&#10005;</button>
+    <div class="form-headline">Get Your Free<br/>Cash Offer Today</div>
+    <div class="form-sub">No obligation &nbsp;&middot;&nbsp; Response within 24 hours &nbsp;&middot;&nbsp; 100% confidential</div>
+    <div class="lead-form">
+      <div class="frow">
+        <div class="fgroup"><label>First Name *</label><input type="text" id="firstName" placeholder="Jane" required/></div>
+        <div class="fgroup"><label>Last Name *</label><input type="text" id="lastName" placeholder="Smith" required/></div>
+      </div>
+      <div class="fgroup"><label>Property Address *</label><input type="text" id="address" placeholder="123 Main Street" required/></div>
+      <div class="frow">
+        <div class="fgroup"><label>City *</label><input type="text" id="city" placeholder="Quincy" required/></div>
+        <div class="fgroup"><label>State *</label><input type="text" id="state" placeholder="MA" required/></div>
+      </div>
+      <div class="frow">
+        <div class="fgroup"><label>Phone *</label><input type="tel" id="phone" placeholder="(508) 377-6864" required/></div>
+        <div class="fgroup"><label>Email *</label><input type="email" id="email" placeholder="your@email.com" required/></div>
+      </div>
+      <div class="fgroup">
+        <label>Why Are You Selling?</label>
+        <select id="reason">
+          <option value="">Select a reason...</option>
+          <option>Inherited property</option>
+          <option>Facing foreclosure</option>
+          <option>Divorce / life change</option>
+          <option>Relocating</option>
+          <option>Property needs too many repairs</option>
+          <option>Behind on payments</option>
+          <option>Tired landlord</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="fgroup">
+        <label>Property Condition</label>
+        <select id="condition">
+          <option value="">Select condition...</option>
+          <option>Move-in ready</option>
+          <option>Needs minor repairs</option>
+          <option>Needs major repairs</option>
+          <option>Distressed / damaged</option>
+        </select>
+      </div>
+      <button class="submit-btn" type="button" onclick="submitForm()">Get My Free Cash Offer &rarr;</button>
+      <div id="formMessage" class="form-msg"></div>
+      <div class="form-trust">Your information is private and never shared with third parties.</div>
+      <div class="contact-quick">
+        <a href="tel:5083776864" class="cq-item">(508) 377-6864</a>
+        <a href="mailto:purpleforgecapital@gmail.com" class="cq-item">purpleforgecapital@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESS -->
+<section class="process">
+  <div class="section-tag">How It Works</div>
+  <h2>Sell Your Home in 4 Simple Steps</h2>
+  <div class="process-grid">
+    <div class="process-step">
+      <div class="step-num">01</div>
+      <div class="step-title">Submit Your Property</div>
+      <p class="step-desc">Fill out our short form with your address and a few details. Takes less than 2 minutes with zero obligation on your end.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">02</div>
+      <div class="step-title">Receive a Cash Offer</div>
+      <p class="step-desc">We review your property and present a fair, no-pressure cash offer within 24–48 hours. No repairs or showings required.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">03</div>
+      <div class="step-title">Choose Your Closing Date</div>
+      <p class="step-desc">You select when to close — on a timeline that works for you. We handle all paperwork from start to finish.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">04</div>
+      <div class="step-title">Collect Your Cash</div>
+      <p class="step-desc">Walk away with cash in hand on your schedule. No hidden fees, no surprises. Just a clean, straightforward sale.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-tag">About Us</div>
+  <h2>Who We Are</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <div class="about-highlight">We are Massachusetts real estate investors who believe selling your home should be simple, fair, and stress-free.</div>
+      <p>Purple Forge Capital was founded with one mission — to give Massachusetts homeowners a better way to sell. Whether you are dealing with an inherited property, facing foreclosure, going through a divorce, or simply ready to move on, we are here to help with a straightforward cash offer and zero hassle.</p>
+      <p>We are not a large corporation or a national hedge fund. We are local investors who know Massachusetts neighborhoods, understand the local market, and genuinely care about the people we work with. Every deal is handled with honesty, speed, and respect for your situation.</p>
+      <p>We have helped hundreds of Massachusetts homeowners move forward — and we would love to help you too.</p>
+    </div>
+    <div class="about-cards">
+      <div class="about-card">
+        <h4>Our Mission</h4>
+        <p>To provide Massachusetts homeowners with a fast, honest, and hassle-free alternative to the traditional real estate process — putting more money in your pocket with less stress.</p>
+      </div>
+      <div class="about-card">
+        <h4>Local Expertise</h4>
+        <p>We know Massachusetts neighborhoods inside and out — from the South Shore to Greater Boston. Our local knowledge means fair, accurate offers delivered quickly.</p>
+      </div>
+      <div class="about-card">
+        <h4>Our Promise</h4>
+        <p>No pressure. No games. No hidden fees. We will always be upfront about our offer and our process. If we make you an offer, we stand behind it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SITUATIONS -->
+<section class="situations" id="situations">
+  <div class="section-tag">We Can Help With</div>
+  <h2>We Buy in Any Situation</h2>
+  <p class="section-sub">Whatever your circumstances, we have worked with homeowners in similar situations and we are here to help — without judgment.</p>
+  <div class="sit-grid">
+    <div class="sit-card">
+      <div class="sit-marker"></div>
+      <div class="sit-title">Inherited Property</div>
+      <p class="sit-desc">Dealing with a probate property or inherited home you do not want to manage? We make the process quick, respectful, and straightforward.</p>
+    </div>
+    <div class="sit-card">
+      <div class="sit-marker"></div>
+      <div class="sit-title">Facing Foreclosure</div>
+      <p class="sit-desc">Behind on payments or in foreclosure? We move fast to help you avoid further damage to your credit and walk away with cash.</p>
+    </div>
+    <div class="sit-card">
+      <div class="sit-marker"></div>
+      <div class="sit-title">Relocating</div>
+      <p class="sit-desc">Moving for work or family? Skip the listings, showings, and months of waiting — we buy on your timeline.</p>
+    </div>
+    <div class="sit-card">
+      <div class="sit-marker"></div>
+      <div class="sit-title">Major Repairs Needed</div>
+      <p class="sit-desc">Fire damage, foundation issues, outdated systems — we buy homes as-is. You do not spend a single dollar fixing anything.</p>
+    </div>
+    <div class="sit-card">
+      <div class="sit-marker"></div>
+      <div class="sit-title">Divorce / Life Change</div>
+      <p class="sit-desc">A fast, private cash sale can bring closure and clarity during a difficult transition, letting you move forward on your terms.</p>
+    </div>
+    <div class="sit-card">
+      <div class="sit-marker"></div>
+      <div class="sit-title">Tired Landlord</div>
+      <p class="sit-desc">Done managing tenants and maintenance? We buy rental properties and multi-families — occupied or vacant, any condition.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY SELL -->
+<section class="why" id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-tag">Why Choose Us</div>
+      <h2>Skip the Hassle.<br/>Sell Direct.</h2>
+      <div class="why-list">
+        <div class="why-item">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Sell As-Is — Any Condition</h4>
+            <p>Do not spend a dollar fixing your home. We purchase properties in any condition — fire damage, outdated systems, foundation issues. We have seen it all.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">02</div>
+          <div>
+            <h4>No Agent, No Commission</h4>
+            <p>Traditional sales cost 5–6% in agent fees alone. Selling directly to us means you keep more of what your home is worth.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Flexible Closing Timeline</h4>
+            <p>Need to close in 10 days? Need 60? You decide. We work entirely around your schedule and life circumstances.</p>
+          </div>
+        </div>
+        <div class="why-item">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Local Massachusetts Buyers</h4>
+            <p>We are not a national algorithm. We are local investors who know these neighborhoods and close with real, verified cash.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="vs-card">
+      <div class="vs-title">Purple Forge Capital vs. Traditional Sale</div>
+      <table class="vs-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Purple Forge</th>
+            <th>Traditional Sale</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Closing Time</td><td>Your Timeline</td><td>60–90 Days</td></tr>
+          <tr><td>Agent Commissions</td><td>$0</td><td>5–6%</td></tr>
+          <tr><td>Repairs Required</td><td>None</td><td>Often $10K–$40K+</td></tr>
+          <tr><td>Showings</td><td>Zero</td><td>Many</td></tr>
+          <tr><td>Deal Fall Through Risk</td><td>None</td><td>High</td></tr>
+          <tr><td>Closing Costs</td><td>We Cover Them</td><td>2–5% Seller Pays</td></tr>
+          <tr><td>Cash in Hand</td><td>Guaranteed</td><td>Depends on Financing</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="section-tag">Common Questions</div>
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Do I need to make repairs before selling?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Absolutely not. We purchase homes in any condition — fire damage, outdated systems, foundation issues, or hoarding situations. You do not need to clean, fix, or stage anything. We handle everything after closing so you can walk away without additional expense or effort.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Are there any fees or commissions?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>None. There are no agent commissions, no closing costs, and no hidden fees. The offer we present is the amount you walk away with. Traditional real estate transactions can cost sellers 6–10% in combined fees — we eliminate all of that.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">What types of properties do you buy?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>We purchase all types of residential properties across Massachusetts — single family homes, multi-family properties, condominiums, and rental units. Whether the home is vacant, tenant-occupied, inherited, or in foreclosure, we are prepared to make an offer.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How is this different from listing with an agent?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>When you list with an agent, you typically wait several months for the right buyer, pay 5–6% in commission, make requested repairs, host repeated showings, and risk the deal falling through at the last minute. With Purple Forge Capital, you receive a guaranteed cash offer, pay zero fees, skip showings entirely, and close on your schedule.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">How quickly can you close?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>We can close in as few as 7–10 days when needed. If you require more time, that is equally fine — we follow your schedule. Once you accept our offer, we manage all paperwork and coordinate directly with the title company on your behalf.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question" onclick="toggleFaq(this)">Is my information kept confidential?<span class="faq-icon">+</span></button>
+      <div class="faq-answer"><p>Yes, completely. All information you share with us remains private and is never sold or disclosed to third parties. Every conversation is treated with full discretion — regardless of the circumstances surrounding your sale.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<div class="bottom-cta">
+  <div class="bcta-text">
+    <h2>Ready to Get Your Free Cash Offer?</h2>
+    <p>No repairs. No fees. No pressure. Close on your timeline.</p>
+  </div>
+  <button class="bcta-btn" onclick="openPopup()">Request My Cash Offer</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <svg width="42px" height="42px" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="40,5 71,22.5 71,57.5 40,75 9,57.5 9,22.5" fill="#F1EFE8"/>
+      <polygon points="40,5 71,22.5 71,57.5 40,75 9,57.5 9,22.5" fill="none" stroke="#9A7B3F" stroke-width="2.5"/>
+      <polygon points="40,14 63,27 63,53 40,66 17,53 17,27" fill="none" stroke="#F1EFE8" stroke-width="1" opacity="0.4"/>
+      <text font-family="Georgia,serif" font-size="17" font-weight="700" fill="#1E2B3A" x="40" y="41" text-anchor="middle" dominant-baseline="central" letter-spacing="1">PFC</text>
+    </svg>
+    <div>
+      <div class="footer-logo-name">Purple Forge <span>Capital</span></div>
+      <div class="footer-address">Boston, MA &mdash; Serving All of Massachusetts</div>
+      <div class="footer-copy">&copy; 2025 Purple Forge Capital &middot; Massachusetts Real Estate</div>
+      <div class="footer-links">
+        <a href="tel:5083776864">(508) 377-6864</a>
+        <a href="mailto:purpleforgecapital@gmail.com">purpleforgecapital@gmail.com</a>
+      </div>
+      <div class="footer-disclaimer">We are real estate investors, not licensed real estate agents. All offers are made directly and are not represented through a brokerage. Offers are subject to property inspection and due diligence.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxe6MY6IZbtUGW8SekIoufWFORPFXKoyZ6gU69jquvRizshFBv_zLLZ2CZ_w9zHuSyhZQ/exec';
+
+function openPopup(){document.getElementById('popupOverlay').classList.add('active');document.body.style.overflow='hidden';}
+function closePopup(){document.getElementById('popupOverlay').classList.remove('active');document.body.style.overflow='';}
+function closeOnOverlay(e){if(e.target===document.getElementById('popupOverlay'))closePopup();}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closePopup();});
+
+function submitForm(){
+  var msgEl    = document.getElementById('formMessage');
+  var btn      = document.querySelector('.submit-btn');
+  var firstName= document.getElementById('firstName').value.trim();
+  var lastName = document.getElementById('lastName').value.trim();
+  var address  = document.getElementById('address').value.trim();
+  var city     = document.getElementById('city').value.trim();
+  var state    = document.getElementById('state').value.trim();
+  var phone    = document.getElementById('phone').value.trim();
+  var email    = document.getElementById('email').value.trim();
+  var reason   = document.getElementById('reason').value;
+  var condition= document.getElementById('condition').value;
+
+  if(!firstName||!lastName||!address||!city||!state||!phone||!email){
+    msgEl.className='form-msg error';
+    msgEl.textContent='Please complete all required fields before submitting.';
+    return;
+  }
+
+  btn.disabled=true;
+  btn.textContent='Submitting...';
+  msgEl.className='form-msg';
+  msgEl.textContent='';
+
+  var iframeName='hidden_iframe_'+Date.now();
+  var iframe=document.createElement('iframe');
+  iframe.name=iframeName;
+  iframe.style.display='none';
+  document.body.appendChild(iframe);
+
+  var hiddenForm=document.createElement('form');
+  hiddenForm.method='POST';
+  hiddenForm.action=GOOGLE_SCRIPT_URL;
+  hiddenForm.target=iframeName;
+
+  var fields={
+    timestamp: new Date().toLocaleString('en-US',{timeZone:'America/New_York'}),
+    firstName: firstName,
+    lastName:  lastName,
+    address:   address,
+    city:      city,
+    state:     state,
+    phone:     phone,
+    email:     email,
+    reason:    reason,
+    condition: condition
+  };
+
+  Object.keys(fields).forEach(function(key){
+    var input=document.createElement('input');
+    input.type='hidden';
+    input.name=key;
+    input.value=fields[key];
+    hiddenForm.appendChild(input);
+  });
+
+  document.body.appendChild(hiddenForm);
+  hiddenForm.submit();
+
+  setTimeout(function(){
+    msgEl.className='form-msg success';
+    msgEl.textContent='Thank you. We will be in touch within 24 hours with your cash offer.';
+    btn.disabled=false;
+    btn.textContent='Get My Free Cash Offer \u2192';
+    ['firstName','lastName','address','city','state','phone','email','reason','condition'].forEach(function(id){
+      document.getElementById(id).value='';
+    });
+    try{document.body.removeChild(hiddenForm);document.body.removeChild(iframe);}catch(e){}
+  },2500);
+}
+
+function toggleFaq(btn){
+  var answer=btn.nextElementSibling;
+  var isOpen=answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(function(a){a.classList.remove('open');});
+  document.querySelectorAll('.faq-question').forEach(function(b){b.classList.remove('active');});
+  if(!isOpen){answer.classList.add('open');btn.classList.add('active');}
+}
+</script>
+</body>
+</html>
